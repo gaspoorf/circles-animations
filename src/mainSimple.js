@@ -149,7 +149,7 @@ projects.forEach((project, index) => {
     if (window.innerWidth < 768) {
       gsap.to(navigation, {
         opacity: 0,
-        duration: 0.5,
+        duration: 0.7,
         ease: 'power2.inOut',
       });
     }
@@ -178,7 +178,7 @@ projects.forEach((project, index) => {
           x: Math.cos(a) * radiusX,
           y: Math.sin(a) * radiusY, 
           scale: 1,
-          duration: 0.5,
+          duration: 0.7,
           ease: 'power2.inOut',
           onComplete: () => {
             p.classList.remove('active');
@@ -219,7 +219,7 @@ activeBackground.addEventListener('click', () => {
   if (window.innerWidth < 768) {
     gsap.to(navigation, {
       opacity: 1,
-      duration: 0.5,
+      duration: 0.,
       ease: 'power2.inOut',
     });
   }
@@ -232,7 +232,7 @@ activeBackground.addEventListener('click', () => {
         y: window.innerHeight / 2 - p.offsetHeight / 2 + Math.sin(a) * radiusY,
 
         scale: 1,
-        duration: 0.5,
+        duration: 0.7,
         ease: 'power2.inOut',
         onComplete: () => {
           p.classList.remove('active');
