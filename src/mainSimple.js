@@ -1,7 +1,6 @@
 import './styleSimple.css'
 import gsap from 'gsap';
 
-
 const items = gsap.utils.toArray('.project');
 const count = items.length;
 
@@ -62,25 +61,22 @@ window.addEventListener('mouseup', () => {
   drag.active = false;
 });
 
-// // Touch Start
-// window.addEventListener('touchstart', (e) => {
-//   drag.active = true;
-//   drag.startY = e.touches[0].clientY;
-//   drag.startScroll = scroll.target;
-// });
 
-// // Touch Move
-// window.addEventListener('touchmove', (e) => {
-//   if (!drag.active) return;
+window.addEventListener('touchstart', (e) => {
+  drag.active = true;
+  drag.startY = e.touches[0].clientY;
+  drag.startScroll = scroll.target;
+});
+window.addEventListener('touchmove', (e) => {
+  if (!drag.active) return;
   
-//   const deltaY = e.touches[0].clientY - drag.startY;
-//   scroll.target = drag.startScroll - deltaY * 0.002;
-// });
+  const deltaY = e.touches[0].clientY - drag.startY;
+  scroll.target = drag.startScroll - deltaY * 0.002;
+});
 
-// // Touch End
-// window.addEventListener('touchend', () => {
-//   drag.active = false;
-// });
+window.addEventListener('touchend', () => {
+  drag.active = false;
+});
 
 
 function initializePositions() {
@@ -88,7 +84,7 @@ function initializePositions() {
     const a = angles[i];
     gsap.set(el, {
       x: Math.cos(a) * radiusX,
-      y: Math.sin(a) * radiusY,
+      y: window.innerHeight / 2 - el.offsetHeight / 2 + Math.sin(a) * radiusY,
       rotate: 0,
       zIndex: count - i
     });
@@ -114,7 +110,8 @@ window.addEventListener('resize', () => {
     const a = angles[i] + scroll.current;
     gsap.set(el, {
       x: Math.cos(a) * radiusX,
-      y: Math.sin(a) * radiusY
+      y: window.innerHeight / 2 - el.offsetHeight / 2 + Math.sin(a) * radiusY
+
     });
   });
 });
@@ -127,7 +124,8 @@ gsap.ticker.add(() => {
     const a = angles[i] + scroll.current;
     gsap.set(el, {
       x: Math.cos(a) * radiusX,
-      y: Math.sin(a) * radiusY
+      y: window.innerHeight / 2 - el.offsetHeight / 2 + Math.sin(a) * radiusY
+
     });
   });
 });
@@ -178,7 +176,7 @@ projects.forEach((project, index) => {
         const a = angles[i] + scroll.current;
         gsap.to(p, {
           x: Math.cos(a) * radiusX,
-          y: Math.sin(a) * radiusY,
+          y: Math.sin(a) * radiusY, 
           scale: 1,
           duration: 0.5,
           ease: 'power2.inOut',
@@ -197,7 +195,7 @@ projects.forEach((project, index) => {
       
       gsap.to(project, {
         x: carouselCenter,
-        y: 0,
+        y: window.innerHeight / 2 - project.offsetHeight / 2,
         duration: 0.7,
         scale: 1.3, 
         ease: 'power2.inOut',
@@ -231,7 +229,8 @@ activeBackground.addEventListener('click', () => {
       const a = angles[i] + scroll.current;
       gsap.to(p, {
         x: Math.cos(a) * radiusX,
-        y: Math.sin(a) * radiusY,
+        y: window.innerHeight / 2 - p.offsetHeight / 2 + Math.sin(a) * radiusY,
+
         scale: 1,
         duration: 0.5,
         ease: 'power2.inOut',
