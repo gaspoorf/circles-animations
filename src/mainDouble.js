@@ -37,7 +37,7 @@ let radiusY = calculateRadius().y;
 const scroll = {
   current: 0,
   target: 0,
-  ease: 0.05
+  ease: 0.03
 };
 
 
