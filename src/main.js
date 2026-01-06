@@ -4,6 +4,22 @@ import gsap from 'gsap';
 const items = gsap.utils.toArray('.project');
 const count = items.length;
 
+
+const body = document.body;
+const switchBackground = document.querySelector('#bg-switch');
+let isDark = true;
+switchBackground.addEventListener('click', () => {
+  if (isDark) {
+    body.classList.remove('dark');
+    body.classList.add('light');
+  } else {
+    body.classList.remove('light');
+    body.classList.add('dark');
+  }
+  isDark = !isDark;
+});
+
+
 function calculateRadius() {
   if (window.innerWidth < 768) {
     return {
@@ -122,6 +138,7 @@ const name = document.getElementById('name');
 const description = document.getElementById('description');
 
 const navigation = document.querySelector('.navigation');
+const demo = document.querySelector('.demo');
 
 // open project
 projects.forEach((project, index) => {
@@ -129,6 +146,16 @@ projects.forEach((project, index) => {
 
     if (window.innerWidth < 768) {
       gsap.to(navigation, {
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power2.inOut',
+      });
+      gsap.to(switchBackground, {
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power2.inOut',
+      });
+      gsap.to(demo, {
         opacity: 0,
         duration: 0.7,
         ease: 'power2.inOut',
@@ -197,6 +224,16 @@ projects.forEach((project, index) => {
 activeBackground.addEventListener('click', () => {
   if (window.innerWidth < 768) {
     gsap.to(navigation, {
+      opacity: 1,
+      duration: 0.7,
+      ease: 'power2.inOut',
+    });
+    gsap.to(switchBackground, {
+      opacity: 1,
+      duration: 0.7,
+      ease: 'power2.inOut',
+    });
+    gsap.to(demo, {
       opacity: 1,
       duration: 0.7,
       ease: 'power2.inOut',

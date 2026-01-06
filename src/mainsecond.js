@@ -6,6 +6,36 @@ const items2 = gsap.utils.toArray('.project2');
 
 const count = items.length;
 
+
+const body = document.body;
+const switchBackground = document.querySelector('#bg-switch');
+let isDark = true;
+switchBackground.addEventListener('click', () => {
+  if (isDark) {
+    body.classList.remove('dark');
+    body.classList.add('light');
+  } else {
+    body.classList.remove('light');
+    body.classList.add('dark');
+  }
+  isDark = !isDark;
+});
+
+const demo1 = document.querySelector('#demo1');
+const demo2 = document.querySelector('#demo2');
+
+demo1.addEventListener('click', () => {
+  demo1.style.opacity = '1';
+  demo2.style.opacity = '0.5';
+});
+
+demo2.addEventListener('click', () => {
+  demo2.style.opacity = '1';
+  demo1.style.opacity = '0.5';
+});
+
+
+
 function calculateRadius() {
   if (window.innerWidth < 768) {
     return {

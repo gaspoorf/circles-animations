@@ -2,13 +2,6 @@
 @font-face {
   font-family: 'Aeonik';
   src: url('../fonts/Aeonik.woff2') format('woff2');
-  font-style: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Neue Montreal';
-  src: url('../fonts/NeueMontreal.woff2') format('woff2');
   font-style: normal;
   font-display: swap;
 }
@@ -43,7 +36,21 @@ body, html {
   user-select: none;
 }
 
-body {
+body{
+  background: url("../public/img/background-black.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dark{
+  background: url("../public/img/background-black.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.light{
   background: url("../public/img/background.webp");
   background-position: center;
   background-repeat: no-repeat;
@@ -64,7 +71,7 @@ p {
   margin: 0;
   padding: 0;
   font-weight: 400;
-  font-family: 'Neue Montreal';
+  font-family: 'Aeonik';
 }
 
 h1, h2 {
@@ -140,7 +147,7 @@ nav {
   width: 100%;
   color: #000;
   text-align: center;
-  font-family: 'Neue Montreal';
+  font-family: 'Aeonik';
   font-size: 9.8px;
   font-style: normal;
   font-weight: 400;
@@ -241,6 +248,43 @@ nav {
   line-height: 90px;
 }
 
+
+
+.demo{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  display: flex;
+  gap: 50px;
+}
+
+.controls{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+#bg-switch, .demo a{
+  border: none;
+  background-color: transparent;;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: 'Aeonik';
+  text-transform: uppercase;
+}
+
+#demo1{
+  opacity: 0.5;
+}
+
+
 /* responsive */
 
 
@@ -303,16 +347,14 @@ nav {
   }
 }
 
-@media (max-width: 1420px) {
-  .carousel {
-    right: -47%;
-  }
-  .carousel2 {
-    left: -47%;
+
+@media (max-width: 1320px) {
+  .project, .project2 {
+    width: 300px;
   }
 }
 
-@media (max-width: 1320px) {
+@media (max-width: 1120px) {
   .carousel {
     right: -50%;
   }
@@ -321,7 +363,7 @@ nav {
   }
 
   .project, .project2 {
-    width: 200px;
+    width: 250px;
   }
 }
 
@@ -343,11 +385,11 @@ nav {
 
 @media (max-width: 768px) {
   .carousel {
-    left: 150%;
+    left: 140%;
   }
 
   .carousel2 {
-    right: 150%;
+    left: -40%;
   }
 
   nav {
@@ -365,9 +407,14 @@ nav {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 768px) {
   .project, .project2 {
-    width: 200px;
+    width: 100px;
   }
+
+  .navigation{
+    display: none;
+  }
+
 }
 
