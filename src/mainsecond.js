@@ -169,11 +169,6 @@ const demo = document.querySelector('.demo');
 projects.forEach((project, index) => {
   project.addEventListener('click', () => {
 
-    gsap.to(projects2, {
-      opacity: 0,
-      duration: 0.7,
-      ease: 'power2.inOut',
-    });
     gsap.to(demo, {
       opacity: 0,
       duration: 0.7,
@@ -249,6 +244,12 @@ projects.forEach((project, index) => {
 
 projects2.forEach((project, index) => {
   project.addEventListener('click', () => {
+
+    gsap.to(projects, {
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power2.inOut',
+    });
 
     if (window.innerWidth < 768) {
       gsap.to(navigation, {
@@ -331,12 +332,6 @@ activeBackground.addEventListener('click', () => {
     });
   }
 
-  gsap.to(projects2, {
-    opacity: 1,
-    duration: 0.7,
-    ease: 'power2.inOut',
-  });
-
   projects.forEach((p, i) => {
     if (p.classList.contains('active')) {
       const a = angles[i] + scroll.current;
@@ -377,6 +372,12 @@ activeBackground2.addEventListener('click', () => {
       ease: 'power2.inOut',
     });
   }
+
+  gsap.to(projects, {
+    opacity: 1,
+    duration: 0.7,
+    ease: 'power2.inOut',
+  });
 
   projects2.forEach((p, i) => {
     if (p.classList.contains('active')) {

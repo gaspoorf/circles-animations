@@ -1,6 +1,5 @@
 import gsap from 'gsap';
 
-// Vérifier si le loader a déjà été montré dans cet onglet
 const loaderShown = sessionStorage.getItem('loaderShown');
 
 if (!loaderShown) {
@@ -40,12 +39,12 @@ if (!loaderShown) {
       numEl.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
 
       if (i === currentIndex) {
-        numEl.style.color = '#CA627E';
-        numEl.style.fontSize = '22px';
+        numEl.style.color = '#ca4355';
+        numEl.style.fontSize = '26px';
         numEl.style.fontWeight = '700';
       } else {
         numEl.style.color = 'black';
-        numEl.style.fontSize = '12px';
+        numEl.style.fontSize = '14px';
         numEl.style.fontWeight = '400';
       }
     });
@@ -83,15 +82,22 @@ if (!loaderShown) {
     if (animatedProgress >= 100) {
       gsap.ticker.remove(tick);
       setTimeout(() => {
-        gsap.to('.loader', { opacity: 0, duration: 1, ease: 'power2.inOut', pointerEvents: 'none' });
+        gsap.to('.loader', { 
+          opacity: 0, 
+          duration: 1, 
+          ease: 'power2.inOut', 
+          onStart: () => {
+            document.querySelector('.loader').style.pointerEvents = 'none';
+          },
+          onComplete: () => {
+            sessionStorage.setItem('loaderShown', 'true');
+          }
+        });
       }, 1000);
     }
   });
 
-  // Marquer que le loader a été montré pour cette session
-  sessionStorage.setItem('loaderShown', 'true');
 } else {
-  // Si déjà montré, masquer le loader immédiatement
   const loader = document.querySelector('.loader');
   if (loader) loader.style.display = 'none';
 }
