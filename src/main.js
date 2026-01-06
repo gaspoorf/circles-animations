@@ -5,21 +5,6 @@ const items = gsap.utils.toArray('.project');
 const count = items.length;
 
 
-const body = document.body;
-const switchBackground = document.querySelector('#bg-switch');
-let isDark = true;
-switchBackground.addEventListener('click', () => {
-  if (isDark) {
-    body.classList.remove('dark');
-    body.classList.add('light');
-  } else {
-    body.classList.remove('light');
-    body.classList.add('dark');
-  }
-  isDark = !isDark;
-});
-
-
 function calculateRadius() {
   if (window.innerWidth < 768) {
     return {
@@ -150,17 +135,13 @@ projects.forEach((project, index) => {
         duration: 0.7,
         ease: 'power2.inOut',
       });
-      gsap.to(switchBackground, {
-        opacity: 0,
-        duration: 0.7,
-        ease: 'power2.inOut',
-      });
-      gsap.to(demo, {
-        opacity: 0,
-        duration: 0.7,
-        ease: 'power2.inOut',
-      });
     }
+
+    gsap.to(demo, {
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power2.inOut',
+    });
 
     const img = project.querySelector('img');
     const bgSrc = img.getAttribute('data-bg-src');
@@ -228,17 +209,13 @@ activeBackground.addEventListener('click', () => {
       duration: 0.7,
       ease: 'power2.inOut',
     });
-    gsap.to(switchBackground, {
-      opacity: 1,
-      duration: 0.7,
-      ease: 'power2.inOut',
-    });
-    gsap.to(demo, {
-      opacity: 1,
-      duration: 0.7,
-      ease: 'power2.inOut',
-    });
   }
+
+  gsap.to(demo, {
+    opacity: 1,
+    duration: 0.7,
+    ease: 'power2.inOut',
+  });
 
   projects.forEach((p, i) => {
     if (p.classList.contains('active')) {

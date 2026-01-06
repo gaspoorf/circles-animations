@@ -20,6 +20,12 @@
         </div>
       </div>
 
+      <div class="transition-container">
+        <div class="transition-content"></div>
+        <div class="transition-content"></div>
+        <div class="transition-content"></div>
+      </div>
+
       <div class="carousel">
         <div class="project">
           <div class="project-title">designer.com</div>
@@ -208,14 +214,9 @@
       </div>
 
       <div class="demo">
-        <a id="demo1" href="/">DEMO 01</a>
-        <a id="demo2" href="/secondversion/">DEMO 02</a>
+        <a id="demo1" onclick="redirection('')">DEMO 01</a>
+        <a id="demo2" onclick="redirection('secondversion/')" >DEMO 02</a>
       </div>
-
-      <div class="controls">
-        <button id="bg-switch">background</button>
-      </div>        
-
 
     </main>
     <style>
@@ -229,7 +230,7 @@
         justify-content: center;
         align-items: center;
         background: white;
-        z-index: 1000;
+        z-index: 9999;
         pointer-events: none;
         overflow: hidden;
       }
@@ -250,8 +251,24 @@
         font-size: 12px;
         transform: translate(-50%, -50%);
       }
+      .transition-container {
+        position: fixed;
+        inset: 0;
+        z-index: 9998;
+        display: flex;
+        flex-direction: column;
+        pointer-events: none;
+      }
+
+      .transition-content {
+        width: 100vw;
+        height: calc(100vh / 3);
+        background-color: white;
+        transform: translateX(0%);
+      }
     </style>
     <script type="module" src="/src/loader.js"></script>
+    <script type="module" src="/src/transition.js"></script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
