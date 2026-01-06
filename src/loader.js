@@ -37,7 +37,7 @@ function updateLoader(progress) {
     numEl.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
 
     if (i === currentIndex) {
-      numEl.style.color = 'red';
+      numEl.style.color = '#CA627E';
       numEl.style.fontSize = '22px';
       numEl.style.fontWeight = '700';
     } else {
