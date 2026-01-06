@@ -1,0 +1,373 @@
+/* fonts */
+@font-face {
+  font-family: 'Aeonik';
+  src: url('../fonts/Aeonik.woff2') format('woff2');
+  font-style: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SheLostHerMind';
+  src: url('../fonts/she-lost-her-mind.woff2') format('woff2');
+  font-style: 400;
+  font-display: swap;
+}
+
+/* root */
+:root {
+  font-family: 'Source Code Pro', sans-serif;
+  line-height: 1.5;
+  font-weight: normal;
+  color: black;
+  background-color: #f3f3f3;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 10px;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+}
+
+body {
+  background: url("../public/img/background.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* gloabl elements */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-family: 'Neue Montreal';
+}
+
+h1, h2 {
+  font-size: 10px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: 'Aeonik';
+}
+
+/* nav */
+.navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: min-content;
+  padding: 1rem;
+  z-index: 2;
+  color: white;
+}
+
+nav {
+  display: flex;
+  width: 166px;
+  padding: 18px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.nav-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: normal;
+  transition: all 0.25s ease-in-out;
+  color: #F3F4F6;
+  opacity: 0.4;
+}
+
+.nav-projects:hover {
+  color: white;
+  opacity: 1;
+}
+
+.description {
+  max-width: 319px;
+}
+
+/* project */
+.project, .project2 {
+  aspect-ratio: 16/10;
+  width: 313px;
+  background: linear-gradient(180deg, rgba(243, 244, 246, 0.40) 0%, rgba(229, 231, 235, 0.40) 100%);
+  border-radius: 3.5px;
+  position: absolute;
+  transform: translateX(-50%);
+  pointer-events: auto;
+  border: 1px solid rgba(243, 244, 246, 0.40);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.project:hover, .project2:hover {
+  cursor: pointer;
+}
+
+.project-title {
+  width: 100%;
+  color: #000;
+  text-align: center;
+  font-family: 'Neue Montreal';
+  font-size: 9.8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 13px;
+  text-transform: lowercase;
+}
+
+.img-container {
+  aspect-ratio: 16/10;
+  padding: 4.5px;
+  overflow: hidden;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.carousel {
+  position: fixed;
+  right: -50%;
+}
+
+.carousel2 {
+  position: fixed;
+  left: -50%;
+}
+
+.revert{
+  transform: scaleY(-1);
+}
+
+/* active states */
+.active {
+  z-index: 20 !important;
+}
+
+.active-background, .active-background2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 19;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.active-background::after, .active-background2::after {
+  opacity: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.active-background img, .active-background2 img {
+  width: 100%;
+  height: 100%;
+  z-index: 19;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* project content */
+.project-content {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 95%;
+  z-index: 1;
+}
+
+#suptitle, #name, #description, #suptitle2, #name2, #description2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #DBDBD1;
+  font-family: 'SheLostHerMind';
+  text-transform: uppercase;
+}
+
+#suptitle, #description, #suptitle2, #description2 {
+  font-size: 46px;
+  line-height: 40px;
+}
+
+#name, #name2 {
+  font-size: 112px;
+  line-height: 90px;
+}
+
+/* responsive */
+
+
+/* max height */
+@media (max-height: 1300px) {
+  .project, .project2 {
+    width: 550px;
+  }
+}
+
+@media (max-height: 1200px) {
+  .project, .project2 {
+    width: 450px;
+  }
+}
+
+@media (max-height: 1100px) {
+  .project, .project2 {
+    width: 420px;
+  }
+}
+
+@media (max-height: 800px) {
+  .project, .project2 {
+    width: 300px;
+  }
+}
+
+/* @media (max-height: 750px) {
+  .project {
+    width: 0px;
+  }
+} */
+
+@media (max-height: 700px) {
+  #name, #name2 {
+    font-size: 86px;
+    line-height: 72px;
+  }
+
+  #suptitle, #description {
+    font-size: 36px;
+  }
+}
+
+@media (max-height: 600px) {
+  .project, .project2 {
+    width: 200px;
+  }
+}
+
+
+/* max width */
+@media (max-width: 2000px) {
+  .carousel {
+    right: -45%;
+  }
+  .carousel2 {
+    left: -45%;
+  }
+}
+
+@media (max-width: 1420px) {
+  .carousel {
+    right: -47%;
+  }
+  .carousel2 {
+    left: -47%;
+  }
+}
+
+@media (max-width: 1320px) {
+  .carousel {
+    right: -50%;
+  }
+  .carousel2 {
+    left: -50%;
+  }
+
+  .project, .project2 {
+    width: 200px;
+  }
+}
+
+@media (max-width: 950px) {
+  .top, .bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .project, .project2 {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    left: 150%;
+  }
+
+  .carousel2 {
+    right: 150%;
+  }
+
+  nav {
+    width: 94px;
+  }
+
+  #suptitle, #description, #suptitle2, #description2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  #name, #name2 {
+    font-size: 40px;
+    line-height: 43px;
+  }
+}
+
+@media (max-width: 550px) {
+  .project, .project2 {
+    width: 200px;
+  }
+}
+

@@ -1,10 +1,10 @@
+/* fonts */
 @font-face {
   font-family: 'Aeonik';
   src: url('../fonts/Aeonik.woff2') format('woff2');
   font-style: 700;
   font-display: swap;
 }
-
 
 @font-face {
   font-family: 'Neue Montreal';
@@ -20,15 +20,13 @@
   font-display: swap;
 }
 
+/* root */
 :root {
   font-family: 'Source Code Pro', sans-serif;
   line-height: 1.5;
   font-weight: normal;
-
-
   color: black;
   background-color: #f3f3f3;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -45,24 +43,24 @@ body, html {
   user-select: none;
 }
 
-body{
-  background: url("../public/img/background.png");
+body {
+  background: url("../public/img/background.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+/* gloabl elements */
 * {
   box-sizing: border-box;
 }
-
 
 a {
   text-decoration: none;
   color: white;
 }
 
-p{
+p {
   margin: 0;
   padding: 0;
   font-weight: 400;
@@ -78,20 +76,19 @@ h1, h2 {
   font-family: 'Aeonik';
 }
 
-.navigation{
+/* nav */
+.navigation {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
   width: min-content;
-  /* border: 1px solid red; */
   padding: 1rem;
   z-index: 2;
   color: white;
 }
 
-
-nav{
+nav {
   display: flex;
   width: 166px;
   padding: 18px;
@@ -101,48 +98,30 @@ nav{
   gap: 18px;
 }
 
-
-
-.nav-projects{
+.nav-projects {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   line-height: normal;
-
-}
-
-.nav-projects{
   transition: all 0.25s ease-in-out;
   color: #F3F4F6;
   opacity: 0.4;
 }
 
-.nav-projects:hover{
+.nav-projects:hover {
   color: white;
   opacity: 1;
 }
 
-.description{
+.description {
   max-width: 319px;
 }
 
-@media (max-width: 950px) {
-  .top, .bottom{
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: flex-start;
-  }
-
-  .description{
-    max-width: 100%;
-  }
-}
-
-
-.project{
+/* project */
+.project {
   aspect-ratio: 16/10;
   width: 313px;
-  background: linear-gradient(180deg, rgba(243, 244, 246, 0.40) 0%,  rgba(229, 231, 235, 0.40) 100%);
+  background: linear-gradient(180deg, rgba(243, 244, 246, 0.40) 0%, rgba(229, 231, 235, 0.40) 100%);
   border-radius: 3.5px;
   position: absolute;
   transform: translateX(-50%);
@@ -153,61 +132,11 @@ nav{
   backface-visibility: hidden;
 }
 
-@media (max-height: 1300px) {
-  .project{
-    width: 550px;
-  }
-} 
-
-@media (max-height: 1200px) {
-  .project{
-    width: 450px;
-  }
-} 
-
-@media (max-height: 1100px) {
-  .project{
-    width: 420px;
-  }
-} 
-
-
-
-@media (max-height: 800px) {
-  .project{
-    width: 300px;
-  }
-} 
-
-/* @media (max-height: 750px) {
-  .project{
-    width: 0px;
-  }
-}  */
-
-@media (max-height: 600px) {
-  .project{
-    width: 200px;
-  }
-} 
-
-@media (max-width: 950px) {
-  .project, .project{
-    width: 300px;
-  }
-} 
-
-@media (max-width: 550px) {
-  .project{
-    width: 200px;
-  }
-} 
-
-.project:hover{
+.project:hover {
   cursor: pointer;
 }
 
-.project-title{
+.project-title {
   width: 100%;
   color: #000;
   text-align: center;
@@ -219,29 +148,30 @@ nav{
   text-transform: lowercase;
 }
 
-.img-container{
+.img-container {
   aspect-ratio: 16/10;
   padding: 4.5px;
   overflow: hidden;
 }
 
-.img-container img{
+.img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 
 .carousel {
   position: fixed;
   left: 100%;
 }
 
-
-.active{
+/* active states */
+.active {
   z-index: 20 !important;
 }
 
-.active-background{
+.active-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -252,7 +182,7 @@ nav{
   pointer-events: none;
 }
 
-.active-background::after{
+.active-background::after {
   opacity: 1;
   content: '';
   position: absolute;
@@ -265,7 +195,7 @@ nav{
   pointer-events: none;
 }
 
-.active-background img{
+.active-background img {
   width: 100%;
   height: 100%;
   z-index: 19;
@@ -273,7 +203,8 @@ nav{
   pointer-events: none;
 }
 
-.project-content{
+/* project content */
+.project-content {
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -283,7 +214,7 @@ nav{
   z-index: 1;
 }
 
-#suptitle, #name, #description{
+#suptitle, #name, #description {
   font-size: 2rem;
   font-weight: 500;
   color: #DBDBD1;
@@ -291,25 +222,31 @@ nav{
   text-transform: uppercase;
 }
 
-#suptitle, #description{
+#suptitle, #description {
   font-size: 46px;
   line-height: 40px;
 }
 
-#name{
+#name {
   font-size: 112px;
   line-height: 90px;
 }
 
-
-@media (max-height: 700px) {
-  #name{
-    font-size: 86px;
-    line-height: 72px;
+/* responsive */
+/* max width */
+@media (max-width: 950px) {
+  .top, .bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
   }
 
-  #suptitle, #description{
-    font-size: 36px;
+  .description {
+    max-width: 100%;
+  }
+
+  .project, .project {
+    width: 300px;
   }
 }
 
@@ -317,19 +254,72 @@ nav{
   .carousel {
     left: 150%;
   }
-  
-  nav{
+
+  nav {
     width: 94px;
   }
 
-  #suptitle, #description{
+  #suptitle, #description {
     font-size: 24px;
     line-height: 32px;
   }
 
-  #name{
+  #name {
     font-size: 40px;
     line-height: 43px;
   }
+}
 
+@media (max-width: 550px) {
+  .project {
+    width: 200px;
+  }
+}
+
+/* max height */
+@media (max-height: 1300px) {
+  .project {
+    width: 550px;
+  }
+}
+
+@media (max-height: 1200px) {
+  .project {
+    width: 450px;
+  }
+}
+
+@media (max-height: 1100px) {
+  .project {
+    width: 420px;
+  }
+}
+
+@media (max-height: 800px) {
+  .project {
+    width: 300px;
+  }
+}
+
+/* @media (max-height: 750px) {
+  .project {
+    width: 0px;
+  }
+} */
+
+@media (max-height: 700px) {
+  #name {
+    font-size: 86px;
+    line-height: 72px;
+  }
+
+  #suptitle, #description {
+    font-size: 36px;
+  }
+}
+
+@media (max-height: 600px) {
+  .project {
+    width: 200px;
+  }
 }
