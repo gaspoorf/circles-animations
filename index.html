@@ -10,27 +10,29 @@
     <meta name="apple-mobile-web-app-title" content="Experiments" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     <link rel="preload" href="/fonts/she-lost-her-mind.woff2" as="font" type="font/woff2" crossorigin>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Motion Experiments</title>
   </head>
   <body>
     <main>
 
+      <!-- loader  -->
       <div class="loader">
         <div class="loader-circle">
         </div>
       </div>
       <script type="module" src="/src/loader.js"></script>
 
-
+      <!-- transition -->
       <div class="transition-container">
         <div class="transition-content"></div>
         <div class="transition-content"></div>
         <div class="transition-content"></div>
       </div>
 
+      <!-- carousel -->
       <div class="carousel">
+
         <div class="project">
           <div class="project-title">designer.com</div>
           <div class="img-container">
@@ -191,6 +193,7 @@
           <p class="description" data-content="ONLINE FORIT"></p>
         </div>
 
+        <!-- project background active -->
         <div class="active-background">
           <img src="" id="project-background" alt="background actif">
           <div class="project-content">
@@ -199,9 +202,11 @@
             <p id="description"></p>
           </div>
         </div>
+
       </div>
 
 
+      <!-- navigation -->
       <div class="navigation">
         <nav>
           <h1>GASPARD</h1>
@@ -217,14 +222,16 @@
         </nav>
       </div>
 
+      <!-- links to other demos -->
       <div class="demo">
         <a id="demo1" onclick="redirection('')">DEMO 01</a>
         <a id="demo2" onclick="redirection('secondversion/')" >DEMO 02</a>
       </div>
 
     </main>
-    <style>
 
+    <!-- loader and transition style -->
+    <style>
       @font-face {
         font-family: 'SheLostHerMind';
         src: url('/public/fonts/she-lost-her-mind.woff2') format('woff2');
@@ -279,7 +286,7 @@
         transform: translateX(0%);
       }
     </style>
-    <script type="module" src="/src/loader.js"></script>
+
     <script type="module" src="/src/transition.js"></script>
     <script type="module" src="/src/main.js"></script>
   </body>

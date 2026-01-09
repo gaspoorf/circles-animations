@@ -1,3 +1,5 @@
+// page transition animation
+
 import { gsap } from "gsap";
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -34,7 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
+// redirection with transtition
 window.redirection = function (url) {
   transitionAndRedirect("/" + url);
 };

@@ -15,18 +15,16 @@
   <body>
     <main>
 
-      <div class="loader">
-        <div class="loader-circle">
-        </div>
-      </div>
-
+      <!-- transition -->
       <div class="transition-container">
         <div class="transition-content"></div>
         <div class="transition-content"></div>
         <div class="transition-content"></div>
       </div>
 
+      <!-- left carousel -->
       <div class="carousel2">
+
         <div class="project2">
           <div class="revert">
           <div class="project-title">designer.com</div>
@@ -219,6 +217,7 @@
           </div>
         </div>
 
+        <!-- project background active -->
         <div class="active-background2">
           <img src="" id="project-background2" alt="background actif">
           <div class="project-content">
@@ -227,9 +226,13 @@
             <p id="description2"></p>
           </div>
         </div>
+
       </div>
 
+
+      <!-- right carousel -->
       <div class="carousel">
+
         <div class="project">
           <div class="project-title">designer.com</div>
           <div class="img-container">
@@ -390,6 +393,7 @@
           <p class="description" data-content="ONLINE FORIT"></p>
         </div>
 
+        <!-- project background active -->
         <div class="active-background">
           <img src="" id="project-background" alt="background actif">
           <div class="project-content">
@@ -398,9 +402,11 @@
             <p id="description"></p>
           </div>
         </div>
+
       </div>
 
 
+      <!-- navigation -->
       <div class="navigation">
         <nav>
           <h1>GASPARD</h1>
@@ -416,12 +422,15 @@
         </nav>
       </div>
 
+      <!-- links to other demos -->
       <div class="demo">
         <a id="demo1" onclick="redirection('')">DEMO 01</a>
         <a id="demo2" onclick="redirection('secondversion/')" >DEMO 02</a>
       </div>
 
     </main>
+
+    <!-- transition style -->
     <style>
       .transition-container {
         position: fixed;
@@ -439,6 +448,7 @@
         transform: translateX(0%);
       }
     </style>
+    
     <script type="module" src="/src/transition.js"></script>
     <script type="module" src="/src/mainsecond.js"></script>
   </body>

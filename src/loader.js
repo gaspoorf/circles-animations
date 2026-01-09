@@ -1,3 +1,5 @@
+// loader animation
+
 import gsap from 'gsap';
 
 const loaderShown = sessionStorage.getItem('loaderShown');

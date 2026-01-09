@@ -1,3 +1,4 @@
+/* fonts */
 @font-face {
   font-family: 'Aeonik';
   src: url('../fonts/Aeonik.woff2') format('woff2');
@@ -12,7 +13,7 @@
   font-display: swap;
 }
 
-
+/* root */
 :root {
   font-family: 'Source Code Pro', sans-serif;
   line-height: 1.5;
@@ -42,6 +43,8 @@ body{
   background-size: cover;
 }
 
+
+/* gloabl elements */
 * {
   box-sizing: border-box;
 }
@@ -67,6 +70,7 @@ h1, h2 {
   font-family: 'Aeonik';
 }
 
+/* nav */
 .navigation{
   position: absolute;
   top: 50%;
@@ -110,7 +114,7 @@ nav{
   max-width: 319px;
 }
 
-
+/* project */
 .project{
   aspect-ratio: 16/10;
   width: 313px;
@@ -159,7 +163,7 @@ nav{
   left: 100%;
 }
 
-
+/* active states */
 .active{
   z-index: 20 !important;
 }
@@ -196,6 +200,7 @@ nav{
   pointer-events: none;
 }
 
+/* project content */
 .project-content{
   position: absolute;
   bottom: 2rem;
@@ -224,7 +229,7 @@ nav{
   line-height: 90px;
 }
 
-
+/* demos links */
 .demo{
   position: fixed;
   top: 20px;
@@ -252,6 +257,9 @@ nav{
   opacity: 0.5;
 }
 
+
+/* responsive */
+
 @media (max-width: 950px) {
   .top, .bottom{
     flex-direction: column;
@@ -263,7 +271,6 @@ nav{
     max-width: 100%;
   }
 }
-
 
 @media (max-height: 1300px) {
   .project{
@@ -283,19 +290,11 @@ nav{
   }
 } 
 
-
-
 @media (max-height: 800px) {
   .project{
     width: 300px;
   }
 } 
-
-/* @media (max-height: 750px) {
-  .project{
-    width: 0px;
-  }
-}  */
 
 @media (max-height: 600px) {
   .project{
@@ -314,7 +313,6 @@ nav{
     width: 200px;
   }
 } 
-
 
 @media (max-height: 700px) {
   #name{
@@ -345,5 +343,4 @@ nav{
     font-size: 40px;
     line-height: 43px;
   }
-
 }

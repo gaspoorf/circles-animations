@@ -234,8 +234,7 @@ nav {
   line-height: 90px;
 }
 
-
-
+/* demos links */
 .demo{
   position: fixed;
   top: 20px;
@@ -265,8 +264,6 @@ nav {
 
 /* responsive */
 
-
-/* max height */
 @media (max-height: 1300px) {
   .project, .project2 {
     width: 550px;
@@ -291,12 +288,6 @@ nav {
   }
 }
 
-/* @media (max-height: 750px) {
-  .project {
-    width: 0px;
-  }
-} */
-
 @media (max-height: 700px) {
   #name, #name2 {
     font-size: 86px;
@@ -314,8 +305,6 @@ nav {
   }
 }
 
-
-/* max width */
 @media (max-width: 2000px) {
   .carousel {
     right: -45%;
@@ -324,7 +313,6 @@ nav {
     left: -45%;
   }
 }
-
 
 @media (max-width: 1320px) {
   .project, .project2 {
@@ -393,6 +381,5 @@ nav {
   .navigation{
     display: none;
   }
-
 }
 
